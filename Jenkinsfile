@@ -31,7 +31,7 @@ post{
     success{
       echo 'This will run when the pipeline is success'
     }
-   faileure{
+   failure{
      echo 'This will run when the pipeline is failed'
    }
   
