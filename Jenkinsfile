@@ -1,6 +1,6 @@
 pipeline{
 
-agnet any
+agent any
 
 environment{
   DEPLOY_TO = 'Production'
