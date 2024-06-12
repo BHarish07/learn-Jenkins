@@ -25,7 +25,7 @@ stages{
 
      stage('Deploy'){
       steps{
-        echo 'This is a Deply stage'
+        echo 'This is a Deploy stage'
       }
      }
 }
