@@ -1,9 +1,7 @@
 pipeline{
 
-// agent {
-//   label 'AGENT-1'
-// }
 agnet any
+
 environment{
   DEPLOY_TO = 'Production'
 }
