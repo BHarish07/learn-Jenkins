@@ -1,20 +1,40 @@
 pipeline{
 
-agent any
+agent {
+  label 'AGENT-1'
+}
 
 
 stages{
     stage('Build'){
         steps{
- sh 'echo This is a Build stage'
+              echo 'This is a Build stage'
         }
        
     }
      stage('Test'){
        steps{
-         sh 'echo This is a Test stage'
+         echo 'This is a Test stage'
        }
      }
+
+     stage('Deploy'){
+      steps{
+        echo 'This is a Deply stage'
+      }
+     }
 }
+post{
+    always{
+      echo 'This will always run'
+    }
+    success{
+      echo 'This will run when the pipeline is success'
+    }
+   faileure{
+     echo 'This will run when the pipeline is failed'
+   }
+  
+  }
 
 }
