@@ -3,6 +3,9 @@ pipeline{
 agent {
   label 'AGENT-1'
 }
+environment{
+  DEPLOY_TO = 'Production'
+}
 
 
 stages{
