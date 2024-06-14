@@ -9,6 +9,10 @@ environment{
   DEPLOY_TO = 'Production'
 }
 
+parameters{
+    choice(name: 'action', choicea: ['Apply', 'Destroy'], description: 'Pick Something')
+
+}
 
 stages{
     stage('Build'){
@@ -18,14 +22,40 @@ stages{
        
     }
      stage('Test'){
+      when{
+          expression{
+            params.action == 'Apply'
+          }
+      }
        steps{
          echo 'This is a Test stage'
        }
      }
 
      stage('Deploy'){
+      when{
+          expression{
+            params.action == 'Apply'
+          }
+      }
+      input{
+          message "Should we continue?"
+          ok "Yes, we should."
+          submitter "Harish"
+      }
       steps{
         echo 'This is a Deploy stage'
+      }
+     }
+     
+     stage('Destroy'){
+      when{
+          expression{
+            params.action == 'Destroy'
+          }
+      }
+      steps{
+        echo 'This is a Destroy stage'
       }
      }
 }
