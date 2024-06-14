@@ -10,7 +10,7 @@ environment{
 }
 
 parameters{
-    choice(name: 'action', choicea: ['Apply', 'Destroy'], description: 'Pick Something')
+    choice(name: 'action', choices: ['Apply', 'Destroy'], description: 'Pick Something')
 
 }
 options{
