@@ -13,7 +13,10 @@ parameters{
     choice(name: 'action', choicea: ['Apply', 'Destroy'], description: 'Pick Something')
 
 }
+options{
+  
 ansiColor('xterm')
+}
 stages{
     stage('Build'){
         steps{
